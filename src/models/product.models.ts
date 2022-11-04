@@ -21,7 +21,7 @@ export default class ProductModel {
   async getAllProduct(): Promise<IAllProducts[]> {
     const [allProduct] = await this.connection.execute<IAllProducts[] & RowDataPacket[]>(
       'SELECT id, name, amount, orderId FROM Trybesmith.Products',
-    );
+    );    
     return allProduct;
   }
 }
