@@ -19,9 +19,13 @@ export default class LoginService {
     );
   }
 
-  async login(data: ILogin): Promise<string> {
+  async login(data: ILogin): Promise<string> {    
     const login = await this.loginModel.login(data);
 
+    if (login.length === 0) {
+      throw new Error('Username or password invalid');
+    }
+    
     return this.generateToken(login);
   }
 }

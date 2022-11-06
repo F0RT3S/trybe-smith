@@ -5,7 +5,7 @@ import { ILogin } from '../interfaces/ILogin';
 export default class LoginModel {
   private connection = mysql;
 
-  public async login(data: ILogin): Promise<ILogin> {
+  async login(data: ILogin): Promise<ILogin> {
     const { username, password } = data;
 
     const [infoLogin] = await this.connection.execute <ILogin & RowDataPacket[]>(
