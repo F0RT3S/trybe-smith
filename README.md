@@ -70,7 +70,7 @@ Instale as dependências
 npm install
 ~~~
 
-Start the server  
+Inicie o projeto  
 
 ~~~bash  
 npm run dev
