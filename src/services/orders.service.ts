@@ -7,4 +7,8 @@ export default class OrderService {
   async getOrder(): Promise<IOrder[]> {
     return this.orderModel.getOrder();
   }
+
+  async registerProduct(id: number, productsIds: number[]): Promise<IOrder> {
+    return this.orderModel.registerProduct(id, productsIds);
+  }
 }

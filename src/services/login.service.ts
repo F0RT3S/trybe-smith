@@ -7,15 +7,11 @@ export default class LoginService {
 
   public jwt = jsonwebtoken;
 
-  public generateToken(data: ILogin) {
-    const payload = { id: data.id, username: data.username }; 
+  public generateToken(data: any) {
+    const payload = { id: data[0].id, username: data[0].username }; 
     return this.jwt.sign(
       payload, 
       process.env.JWT_SECRET as string,
-      { 
-        algorithm: 'HS256', 
-        expiresIn: '20d', 
-      },
     );
   }
 
